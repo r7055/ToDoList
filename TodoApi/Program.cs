@@ -64,7 +64,7 @@ var app = builder.Build();
 // }
 
 app.UseCors("MyPolicy");
-app.MapGet("/",()=>"toDoListServer api is running ")
+app.MapGet("/",()=>"toDoListServer api is running ");
 app.MapGet("/items", async (ToDoDbContext db) =>
 {
     try
