@@ -52,8 +52,8 @@ builder.Services.AddSwaggerGen(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
+// if (app.Environment.IsDevelopment())
+// {
     app.UseSwagger();
     app.UseSwaggerUI(options =>
     {
@@ -61,10 +61,10 @@ if (app.Environment.IsDevelopment())
         options.RoutePrefix = string.Empty;
     });
 
-}
+// }
 
 app.UseCors("MyPolicy");
-
+app.MapGet("/",()=>"ToDoListServer api is running");
 app.MapGet("/items", async (ToDoDbContext db) =>
 {
     try
