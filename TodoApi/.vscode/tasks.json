@@ -7,7 +7,7 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/פרקטיקוד3,4.sln",
+                "${workspaceFolder}/TodoApi.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -19,7 +19,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/פרקטיקוד3,4.sln",
+                "${workspaceFolder}/TodoApi.sln",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,7 +33,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/פרקטיקוד3,4.sln"
+                "${workspaceFolder}/TodoApi.sln"
             ],
             "problemMatcher": "$msCompile"
         },
@@ -44,14 +44,14 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "34:dev",
+                "tag": "todoapi:dev",
                 "target": "base",
-                "dockerfile": "${workspaceFolder}/TodoApi/Dockerfile",
+                "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/TodoApi/TodoApi.csproj"
+                "appProject": "${workspaceFolder}/TodoApi.csproj"
             }
         },
         {
@@ -61,8 +61,8 @@
                 "build"
             ],
             "dockerBuild": {
-                "tag": "34:latest",
-                "dockerfile": "${workspaceFolder}/TodoApi/Dockerfile",
+                "tag": "todoapi:latest",
+                "dockerfile": "${workspaceFolder}/Dockerfile",
                 "context": "${workspaceFolder}",
                 "platform": {
                     "os": "linux",
@@ -71,7 +71,7 @@
                 "pull": true
             },
             "netCore": {
-                "appProject": "${workspaceFolder}/TodoApi/TodoApi.csproj"
+                "appProject": "${workspaceFolder}/TodoApi.csproj"
             }
         },
         {
@@ -82,7 +82,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/TodoApi/TodoApi.csproj",
+                "appProject": "${workspaceFolder}/TodoApi.csproj",
                 "enableDebugging": true
             }
         },
@@ -94,7 +94,7 @@
             ],
             "dockerRun": {},
             "netCore": {
-                "appProject": "${workspaceFolder}/TodoApi/TodoApi.csproj"
+                "appProject": "${workspaceFolder}/TodoApi.csproj"
             }
         }
     ]
