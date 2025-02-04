@@ -111,22 +111,22 @@ app.MapPut("/items/{id}", async (ToDoDbContext db, int id) =>
     }
 });
 
-// app.MapDelete("/items/{id}", async (ToDoDbContext db, int id) =>
-// {
-//     try
-//     {
-//         var item = await db.Items.FindAsync(id);
-//         if (item is null) return Results.NotFound();
+app.MapDelete("/items/{id}", async (ToDoDbContext db, int id) =>
+{
+    try
+    {
+        var item = await db.Items.FindAsync(id);
+        if (item is null) return Results.NotFound();
 
-//         db.Items.Remove(item);
-//         await db.SaveChangesAsync();
-//         return Results.NoContent();
-//     }
-//     catch (Exception ex)
-//     {
-//         return Results.Problem("An error occurred while deleting the item: " + ex.Message);
-//     }
-// });
+        db.Items.Remove(item);
+        await db.SaveChangesAsync();
+        return Results.NoContent();
+    }
+    catch (Exception ex)
+    {
+        return Results.Problem("An error occurred while deleting the item: " + ex.Message);
+    }
+});
 
 
 app.Run();
