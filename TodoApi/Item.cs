@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TodoApi;
 
-[Table("Items")]
+// [Table("Items")]
 public partial class Item
 {
     public int Id { get; set; }
